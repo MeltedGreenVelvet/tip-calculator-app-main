@@ -66,6 +66,9 @@ $font-family: 'Space Mono', monospace;
 
 body {
     background-color:  HSL(190, 49%, 84%);
+    font-size: rem-calc(16px);
+    font-weight: 700;
+    font-family: $font-family;
 
     .container {
         @extend .mobile-center-flex;
@@ -96,13 +99,34 @@ body {
             }
 
             .total-container {
-                @extend .mobile-center-flex;
-                margin: rem-calc(37px), rem-calc(22px), rem-calc(24px), rem-calc(24px);
-                height: rem-calc(257px);
-                width: rem-calc(327px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: rem-calc(37px) rem-calc(22px) rem-calc(24px) rem-calc(24px);
+                max-width: rem-calc(327px);
                 background-color: $very-dark-cyan;
                 border-radius: 15px;
+                color: $white;
 
+                .input-result {
+                    background-color: rgba(0, 0, 0, 0);
+                    border: none;
+                    outline: none;
+                    color: $strong-cyan;
+                }
+
+                .tip-amount-per-person {
+                    margin-bottom: rem-calc(20px);
+                }
+
+                .total-per-person {
+                    margin-bottom: rem-calc(32px);
+                }
+
+                .per-span {
+                    font-size: rem-calc(13px);
+                    color: $grayish-cyan;
+                }
 
                 .reset-btn {
                     @extend .mobile-center-flex;
@@ -113,12 +137,26 @@ body {
                     width: rem-calc(281px);
                     height: rem-calc(48px);
                     font-size: rem-calc(20px);
-                    font-weight: 700;
-                    font-family: $font-family;
                     cursor: pointer;
                     text-transform: uppercase;
+                    font-weight: 700;
+                    font-family: $font-family;
                 }
             }
         }
+    }
+
+    .attribution { 
+        font-size: 11px;
+        text-align: center; 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
     }
 }
