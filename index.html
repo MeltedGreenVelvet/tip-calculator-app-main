@@ -17,37 +17,47 @@
 </head>
 <body>
   <main class="container">
-    <h1 class="tip-calculator-title">SPLI
-      TTER</h1>
+    <img class="splitter-img" src="../images/splitter.svg" alt="Splitter Tip Calculator Logo">
 
-      Apologies for the confusion. Here's an updated version of the HTML code snippet with the tip % and reset as buttons:
-
-      html
-      Copy code
-      <form>
-        <label for="bill">Bill:</label>
-        <input type="number" id="bill" name="bill" required>
-      
-        <label for="tip">Select Tip %:</label>
-        <div id="tip-buttons">
-          <button type="button" class="tip-button">5%</button>
-          <button type="button" class="tip-button">10%</button>
-          <button type="button" class="tip-button">15%</button>
-          <button type="button" class="tip-button">25%</button>
-          <button type="button" class="tip-button">50%</button>
-          <button type="button" class="tip-button">Custom</button>
+      <form class="tip-calculator">
+        <div class="bill-input">
+          <label for="bill">Bill:</label>
+          <input type="number" id="bill" name="bill" required>
         </div>
       
-        <label for="people">Number of People:</label>
-        <input type="number" id="people" name="people" required>
+        <div class="tip-input">
+          <label for="tip">Select Tip %:</label>
+          <div class="tip-buttons">
+            <button type="button" class="tip-button">5%</button>
+            <button type="button" class="tip-button">10%</button>
+            <button type="button" class="tip-button">15%</button>
+            <button type="button" class="tip-button">25%</button>
+            <button type="button" class="tip-button">50%</button>
+            <button type="button" class="tip-button">Custom</button>
+          </div>
+        </div>
+
+        <div class="number-of-people">
+          <label for="people">Number of People:</label>
+          <input type="number" id="people" name="people" required>
+        </div>
       
-        <label for="tip-amount">Tip Amount / person:</label>
-        <input type="text" id="tip-amount" name="tip-amount" readonly>
+        <div class="total-container">
+          <div class="tip-amount-per-person">
+            <label for="tip-amount" class="tip-space">Tip Amount 
+              / person:</label>
+            <input type="text" id="tip-amount" name="tip-amount" readonly>
+          </div>
+        
       
-        <label for="total">Total / person:</label>
-        <input type="text" id="total" name="total" readonly>
-      
-        <button type="reset">Reset</button>
+          <div class="total-per-person">
+            <label for="total" class="total">Total 
+              / person:</label>
+            <input type="text" id="total" name="total" readonly>
+
+            <button type="reset" class="reset-btn">Reset</button>
+          </div>
+        </div>
       </form>
   </main>
   
