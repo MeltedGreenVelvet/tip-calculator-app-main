@@ -56,6 +56,10 @@ $font-family: 'Space Mono', monospace;
     @return $remValues;
 }
 
+input[type="number"] {
+    display: block;
+    -moz-appearance: textfield;
+}
 
 .mobile-center-flex {
     display: flex;
@@ -85,9 +89,11 @@ body {
     
         .tip-calculator {
             @extend .mobile-center-flex;
+            align-items: flex-start;
+            padding: rem-calc(32px) rem-calc(24px) rem-calc(32px) rem-calc(24px);
             background-color: $white;
             border-radius: 25px;
-            width: rem-calc(375px);
+            max-width: rem-calc(375px);
             height: rem-calc(789px);
             box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 
@@ -96,6 +102,27 @@ body {
             .number-of-people,
             .total-container {
                 margin-top: rem-calc(32px);
+            }
+
+            .number-of-people-input,
+            .bill-input-field {
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                text-align: end;
+                max-width: rem-calc(327px);
+                color: $very-dark-cyan;
+                font-size: $form-input;
+                font-weight: 700;
+                padding: rem-calc(16px) rem-calc(17.48px) rem-calc(16px) rem-calc(19.26px);
+            }
+
+            .bill-input-field {
+                background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+            }
+
+            .number-of-people-input {
+                background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
             }
 
             .total-container {

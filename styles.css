@@ -13,6 +13,11 @@ NEUTRALS
 /*
 FONT
 */
+input[type=number] {
+  display: block;
+  -moz-appearance: textfield;
+}
+
 .mobile-center-flex, body .container .tip-calculator .total-container .reset-btn, body .container .tip-calculator, body .container {
   display: flex;
   flex-direction: column;
@@ -35,9 +40,11 @@ body .container .splitter-img {
   margin-bottom: 2.55375rem;
 }
 body .container .tip-calculator {
+  align-items: flex-start;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   background-color: hsl(0, 0%, 100%);
   border-radius: 25px;
-  width: 23.4375rem;
+  max-width: 23.4375rem;
   height: 49.3125rem;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -46,6 +53,24 @@ body .container .tip-calculator .tip-input,
 body .container .tip-calculator .number-of-people,
 body .container .tip-calculator .total-container {
   margin-top: 2rem;
+}
+body .container .tip-calculator .number-of-people-input,
+body .container .tip-calculator .bill-input-field {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-align: end;
+  max-width: 20.4375rem;
+  color: hsl(183, 100%, 15%);
+  font-size: 24px;
+  font-weight: 700;
+  padding: 1rem 1.0925rem 1rem 1.20375rem;
+}
+body .container .tip-calculator .bill-input-field {
+  background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
+}
+body .container .tip-calculator .number-of-people-input {
+  background: url(../images/icon-person.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
 }
 body .container .tip-calculator .total-container {
   display: flex;
