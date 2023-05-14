@@ -1,0 +1,61 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+/*
+---------------------
+DEFAULTS
+---------------------
+*/
+
+/*
+PRIMARY
+*/
+
+$strong-cyan: hsl(172, 67%, 45%);
+
+/*
+NEUTRALS
+*/
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+/*
+FONT
+*/
+
+$rem-base: 16px;
+$form-input: 24px;
+$font-family: 'Space Mono', monospace;
+
+//Function to convert values to rem.
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base)  {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if ($value == 0rem) { 
+        $value: 0;
+     } // Turn 0rem into 0
+    @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+    $max: length($values);
+    @if $max == 1 { 
+        @return convert-to-rem(nth($values, 1), $base-value); 
+    }
+    $remValues: ();
+    @for $i from 1 through $max {
+        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+    }
+    @return $remValues;
+}
+
+.tip-calculator-title {
+    white-space: pre-line;
+}
