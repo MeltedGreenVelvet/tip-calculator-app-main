@@ -56,7 +56,16 @@ $font-family: 'Space Mono', monospace;
     @return $remValues;
 }
 
-input[type="number"] {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+       -webkit-appearance: none;
+        margin: 0;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="number"]:active {
     display: block;
     -moz-appearance: textfield;
 }
@@ -77,6 +86,7 @@ body {
     .container {
         @extend .mobile-center-flex;
     
+        margin-bottom: 4.5rem; 
         .tip-space,
         .total {
             white-space: pre-line;
@@ -94,14 +104,55 @@ body {
             background-color: $white;
             border-radius: 25px;
             max-width: rem-calc(375px);
-            height: rem-calc(789px);
+            max-height: rem-calc(789px);
             box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 
-            .bill-input,
+            .white-label-text {
+                color: $grayish-cyan;
+                display: inline-block;
+                margin-bottom: rem-calc(6px);
+            }
+
             .tip-input,
             .number-of-people,
             .total-container {
                 margin-top: rem-calc(32px);
+            }
+
+            .tip-buttons {
+                margin-top: rem-calc(10px);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: rem-calc(16px) rem-calc(16.56px);
+
+                .tip-button {
+                    width: rem-calc(146.63px);
+                    height: rem-calc(48px);
+                    border: none;
+                    outline: none;
+                    background-color: $very-dark-cyan;
+                    border-radius: rem-calc(5px);
+                    color: $white;
+                    font-size: $form-input;
+                    font-weight: 700;
+                    font-family: $font-family;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                }
+
+                .tip-button:hover,
+                .tip-button:focus,
+                .tip-button:active {
+                    background-color: $strong-cyan;
+                    color: $very-dark-cyan;
+                }
+
+                .tip-button-custom {
+                    background-color: $very-light-grayish-cyan;
+                    color: $grayish-cyan;
+                }
+
             }
 
             .number-of-people-input,
@@ -168,6 +219,14 @@ body {
                     text-transform: uppercase;
                     font-weight: 700;
                     font-family: $font-family;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                }
+
+                .reset-btn:hover,
+                .reset-btn:focus,
+                .reset-btn:active {
+                    background-color: #0D686D;
+                    color: $very-dark-cyan;
                 }
             }
         }
@@ -176,7 +235,7 @@ body {
     .attribution { 
         font-size: 11px;
         text-align: center; 
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
