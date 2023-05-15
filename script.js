@@ -1,22 +1,35 @@
-const buttons = document.querySelectorAll('.tip-button');
-const inputs = document.querySelectorAll('input');
-const billInputField = document.querySelector('.bill-input-field');
-const tipAmountField = document.querySelector('#tip-amount');
-const personInputField = document.querySelector('.number-of-people-input');
+const tipButtons = document.querySelectorAll('.tip-button');
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const resetButton = document.querySelector('.reset-btn');
 
-function calculateTip() {
-    const bill = parseFloat(billInputField.value);
-    const tip = parseFloat(this.value);
-    const numberOfPeople = parseFloat(personInputField.value);
-
-    if (isNaN(bill) || isNaN(tip) || isNaN(numberOfPeople)) {
-        tipAmountField.value = '';
-        return;
+tipButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const radioBtn = button.previousElementSibling;
+    if (radioBtn) {
+      radioBtn.checked = true;
     }
+  });
+});
 
-    const tipAmount = (bill * tip) / numberOfPeople;
-    tipAmountField.value = tipAmount.toFixed(2);
-}
-
-inputs.forEach(input => input.addEventListener('input', calculateTip));
-buttons.forEach(button => button.addEventListener('click', calculateTip));
+function handleRadioButtonClick(index) {
+    tipButtons.forEach((tipButton, buttonIndex) => {
+      if (buttonIndex !== index) {
+        tipButton.classList.remove('checked');
+      }
+    });
+    tipButtons[index].classList.add('checked');
+  }
+  
+  radioButtons.forEach((radioButton, index) => {
+    radioButton.addEventListener('click', () => {
+      if (radioButton.checked) {
+        handleRadioButtonClick(index);
+      }
+    });
+  });
+  
+  resetButton.addEventListener('click', () => {
+    tipButtons.forEach(tipButton => {
+      tipButton.classList.remove('checked');
+    });
+  });

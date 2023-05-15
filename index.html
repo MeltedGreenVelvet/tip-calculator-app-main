@@ -23,13 +23,27 @@
         <div class="tip-input">
           <label for="tip" class="white-label-text">Select Tip %:</label>
           <div class="tip-buttons">
-            <button type="button" class="tip-button" value=".05">5%</button>
-            <button type="button" class="tip-button" value=".10">10%</button>
-            <button type="button" class="tip-button" value=".15">15%</button>
-            <button type="button" class="tip-button" value=".25">25%</button>
-            <button type="button" class="tip-button" value=".50">50%</button>
-            <button type="button" class="tip-button tip-button-custom">Custom</button>
+            <label for="five-percent-btn" class="tip-button"> 5%
+              <input type="radio" name="five-percent-btn" id="five-percent-btn" value=".05">
+            </label>
+            <label for="ten-percent-btn" class="tip-button"> 10%
+              <input type="radio" name="ten-percent-btn" id="ten-percent-btn" value=".10">
+            </label>
+            <label for="fifteen-percent-btn" class="tip-button"> 15%
+              <input type="radio" name="fifteen-percent-btn" id="fifteen-percent-btn" value=".15">
+            </label>
+            <label for="twenty-five-percent-btn" class="tip-button"> 25%
+              <input type="radio" name="twenty-five-percent-btn" id="twenty-five-percent-btn" value=".25">
+            </label>
+            <label for="fifty-percent-btn" class="tip-button"> 50%
+              <input type="radio" name="fifty-percent-btn" id="fifty-percent-btn" value=".50">
+            </label>
+            <label for="custom-input" class="tip-button tip-button-custom"> Custom
+              <input type="number" name="custom-input" id="custom-input" class="custom-input-btn" value="">
+            </label>
+            
           </div>
+          
         </div>
 
         <div class="number-of-people">
@@ -41,13 +55,13 @@
           <div class="tip-amount-per-person">
             <label for="tip-amount" class="tip-space">Tip Amount 
               <span class="per-span">/ person</span></label>
-            <input type="text" id="tip-amount" name="tip-amount" class="input-result" readonly>
+            <input type="text" id="tip-amount" name="tip-amount" class="tip-amount input-result" readonly>
           </div>
       
           <div class="total-per-person">
             <label for="total" class="total">Total 
               <span class="per-span">/ person</span></label>
-            <input type="text" id="total" name="total" class="input-result" readonly>
+            <input type="text" id="total" name="total" class="total-amount-per-person input-result" readonly>
           </div>
 
           <button type="reset" class="reset-btn">Reset</button>
