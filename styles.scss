@@ -151,10 +151,25 @@ body {
 
                 .tip-button-custom {
                     background-color: $very-light-grayish-cyan;
-                    color: $grayish-cyan;
-                    display: inline-block;
+                    color: $very-dark-cyan;
                     border: none;
                     outline: none;
+                    text-align: end;
+                    padding-left: rem-calc(17.33px);
+                    padding-right: rem-calc(19px);
+                    max-width: rem-calc(146.63px) - rem-calc(17.33px) - rem-calc(19px);
+                    max-height: rem-calc(48px);
+                }
+
+                .tip-button-custom::placeholder {
+                    color: $dark-grayish-cyan;
+                    opacity: 1;
+                }
+
+                .tip-button-custom:hover,
+                .tip-button-custom:focus,
+                .tip-button-custom:active {
+                    color: $dark-grayish-cyan;
                 }
 
                 .checked {
@@ -182,6 +197,19 @@ body {
 
             .number-of-people-input {
                 background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+            }
+
+            .active-state-label:hover,
+            .active-state-label:focus,
+            .active-state-label:active,            
+            .bill-input-field:hover,
+            .bill-input-field:focus,
+            .bill-input-field:active,
+            .number-of-people-input:hover,
+            .number-of-people-input:focus,
+            .number-of-people-input:active  {
+                outline: 2px solid $strong-cyan;
+                border-radius: 5px;
             }
 
             .total-container {

@@ -101,10 +101,27 @@ body .container .tip-calculator .tip-buttons .tip-button {
 }
 body .container .tip-calculator .tip-buttons .tip-button-custom {
   background-color: hsl(189, 41%, 97%);
-  color: hsl(184, 14%, 56%);
-  display: inline-block;
+  color: hsl(183, 100%, 15%);
   border: none;
   outline: none;
+  text-align: end;
+  padding-left: 1.083125rem;
+  padding-right: 1.1875rem;
+  max-width: 6.89375rem;
+  max-height: 3rem;
+}
+body .container .tip-calculator .tip-buttons .tip-button-custom::-moz-placeholder {
+  color: hsl(186, 14%, 43%);
+  opacity: 1;
+}
+body .container .tip-calculator .tip-buttons .tip-button-custom::placeholder {
+  color: hsl(186, 14%, 43%);
+  opacity: 1;
+}
+body .container .tip-calculator .tip-buttons .tip-button-custom:hover,
+body .container .tip-calculator .tip-buttons .tip-button-custom:focus,
+body .container .tip-calculator .tip-buttons .tip-button-custom:active {
+  color: hsl(186, 14%, 43%);
 }
 body .container .tip-calculator .tip-buttons .checked {
   background-color: hsl(172, 67%, 45%);
@@ -127,6 +144,18 @@ body .container .tip-calculator .bill-input-field {
 }
 body .container .tip-calculator .number-of-people-input {
   background: url(../images/icon-person.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
+}
+body .container .tip-calculator .active-state-label:hover,
+body .container .tip-calculator .active-state-label:focus,
+body .container .tip-calculator .active-state-label:active,
+body .container .tip-calculator .bill-input-field:hover,
+body .container .tip-calculator .bill-input-field:focus,
+body .container .tip-calculator .bill-input-field:active,
+body .container .tip-calculator .number-of-people-input:hover,
+body .container .tip-calculator .number-of-people-input:focus,
+body .container .tip-calculator .number-of-people-input:active {
+  outline: 2px solid hsl(172, 67%, 45%);
+  border-radius: 5px;
 }
 body .container .tip-calculator .total-container {
   display: flex;
