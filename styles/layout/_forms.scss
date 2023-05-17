@@ -1,0 +1,100 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+       -webkit-appearance: none;
+        margin: 0;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="number"]:active {
+    display: block;
+    -moz-appearance: textfield;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    z-index: 200;
+}
+
+.container {
+    @extend .center-flex;
+    margin-bottom: 4.5rem;
+
+    .tip-calculator {
+        @extend .center-flex;
+        padding: rem-calc(32px) rem-calc(24px) rem-calc(32px) rem-calc(24px);
+        background-color: $white;
+        border-radius: 25px;
+        max-width: rem-calc(375px);
+        max-height: rem-calc(789px);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+
+        .input-section{
+            max-width: rem-calc(311px);
+        }
+
+        .tip-input,
+        .number-of-people,
+        .total-container {
+            margin-top: rem-calc(32px);
+        }
+
+        .number-of-people-input,
+        .bill-input-field {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            text-align: end;
+            max-width: rem-calc(311px);
+            max-height: rem-calc(48px);
+            color: $very-dark-cyan;
+            font-family: $font-family;
+            font-size: $form-input;
+            font-weight: 700;
+            padding: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(19.26px);
+        }
+
+        .bill-input-field {
+            background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+        }
+
+        .number-of-people-input {
+            background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+        }
+
+        .bill-input-field::placeholder,
+        .number-of-people-input::placeholder {
+            color: $dark-grayish-cyan;
+            opacity: .35;
+        }
+
+        .active-state-label:hover,
+        .active-state-label:focus,
+        .active-state-label:active,            
+        .bill-input-field:hover,
+        .bill-input-field:focus,
+        .bill-input-field:active,
+        .number-of-people-input:hover,
+        .number-of-people-input:focus,
+        .number-of-people-input:active  {
+            outline: 2px solid $strong-cyan;
+            border-radius: 5px;
+        }
+
+        .total-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: rem-calc(37px) rem-calc(22px) rem-calc(24px) rem-calc(24px);
+            max-width: rem-calc(327px);
+            max-height: rem-calc(257px);
+            background-color: $very-dark-cyan;
+            border-radius: 15px;
+            color: $white;
+
+        }
+    }
+}
+

@@ -1,0 +1,76 @@
+.tip-buttons {
+    margin-top: rem-calc(10px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: rem-calc(16px) rem-calc(16.56px);
+    position: relative;
+
+    .tip-button {
+        width: rem-calc(146.63px);
+        height: rem-calc(48px);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $very-dark-cyan;
+        border-radius: rem-calc(5px);
+        color: $white;
+        font-size: $form-input;
+        font-weight: 700;
+        font-family: $font-family;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tip-button-custom {
+        background-color: $very-light-grayish-cyan;
+        color: $very-dark-cyan;
+        border: none;
+        outline: none;
+        text-align: end;
+        padding-left: rem-calc(17.33px);
+        padding-right: rem-calc(19px);
+        max-width: rem-calc(146.63px) - rem-calc(17.33px) - rem-calc(19px);
+        max-height: rem-calc(48px);
+    }
+
+    .tip-button-custom::placeholder {
+        color: $dark-grayish-cyan;
+        opacity: 1;
+    }
+
+    .tip-button-custom:hover,
+    .tip-button-custom:focus,
+    .tip-button-custom:active {
+        color: $dark-grayish-cyan;
+    }
+
+    .checked {
+        background-color: $strong-cyan;
+        color: $white;
+    }
+}
+
+.reset-btn {
+    @extend .center-flex;
+    border: none;
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+    border-radius: 5px;
+    width: rem-calc(281px);
+    height: rem-calc(48px);
+    font-size: rem-calc(20px);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: $font-family;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reset-btn:hover,
+.reset-btn:focus,
+.reset-btn:active {
+    background-color: #0D686D;
+    color: $very-dark-cyan;
+}

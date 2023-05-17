@@ -1,390 +1,57 @@
-@use "sass:math";
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
-
 /*
----------------------
-DEFAULTS
----------------------
+sass 7-1 Directory Structure/
+|
+|– abstracts/ (or utilities/)
+|   |– _variables.scss    // Sass Variables
+|   |– _functions.scss    // Sass Functions
+|   |– _mixins.scss       // Sass Mixins
+|
+|– base/
+|   |– _reset.scss        // Reset/normalize
+|   |– _typography.scss   // Typography rules
+|
+|– components/ (or modules/)
+|   |– _buttons.scss      // Buttons
+|   |– _carousel.scss     // Carousel
+|   |– _slider.scss       // Slider
+|
+|– layout/
+|   |– _navigation.scss   // Navigation
+|   |– _grid.scss         // Grid system
+|   |– _header.scss       // Header
+|   |– _footer.scss       // Footer
+|   |– _sidebar.scss      // Sidebar
+|   |– _forms.scss        // Forms
+|
+|– pages/
+|   |– _home.scss         // Home specific styles
+|   |– _about.scss        // About specific styles
+|   |– _contact.scss      // Contact specific styles
+|
+|– themes/
+|   |– _theme.scss        // Default theme
+|   |– _admin.scss        // Admin theme
+|
+|– vendors/
+|   |– _bootstrap.scss    // Bootstrap
+|   |– _jquery-ui.scss    // jQuery UI
+|
+`– main.scss              // Main Sass file
 */
 
-/*
-PRIMARY
-*/
+@import
+    'abstracts/functions',
+    'abstracts/mixins',
+    'abstracts/vars';
 
-$strong-cyan: hsl(172, 67%, 45%);
+@import
+    'base/mediaQueries',
+    'base/typography';
 
-/*
-NEUTRALS
-*/
-$very-dark-cyan: hsl(183, 100%, 15%);
-$dark-grayish-cyan: hsl(186, 14%, 43%);
-$grayish-cyan: hsl(184, 14%, 56%);
-$light-grayish-cyan: hsl(185, 41%, 84%);
-$very-light-grayish-cyan: hsl(189, 41%, 97%);
-$white: hsl(0, 0%, 100%);
+@import
+    'components/btns';
 
-/*
-FONT
-*/
-
-$rem-base: 16px;
-$form-input: 24px;
-$total-mobile-font-size: 32px;
-$total-desktop-font-size: 48px;
-
-$font-family: 'Space Mono', monospace;
-
-* {
-    box-sizing: border-box;
-}
-
-//Function to convert values to rem.
-@function strip-unit($num) {
-    @return $num / ($num * 0 + 1);
-}
-
-@function convert-to-rem($value, $base-value: $rem-base)  {
-    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
-    @if ($value == 0rem) { 
-        $value: 0;
-     } // Turn 0rem into 0
-    @return $value;
-}
-
-@function rem-calc($values, $base-value: $rem-base) {
-    $max: length($values);
-    @if $max == 1 { 
-        @return convert-to-rem(nth($values, 1), $base-value); 
-    }
-    $remValues: ();
-    @for $i from 1 through $max {
-        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
-    }
-    @return $remValues;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-       -webkit-appearance: none;
-        margin: 0;
-}
-
-input[type="radio"] {
-    opacity: 0;
-    position: absolute;
-    z-index: 200;
-}
-
-input[type="number"],
-input[type="number"]:hover,
-input[type="number"]:focus,
-input[type="number"]:active {
-    display: block;
-    -moz-appearance: textfield;
-}
-
-.center-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-body {
-    background-color:  HSL(190, 49%, 84%);
-    font-size: rem-calc(16px);
-    font-weight: 700;
-    font-family: $font-family;
-
-    .container {
-        @extend .center-flex;
-    
-        margin-bottom: 4.5rem; 
-        .tip-space,
-        .total {
-            white-space: pre-line;
-        }
-    
-        .splitter-img {
-            margin-top: rem-calc(50px);
-            margin-bottom: rem-calc(40.86px);
-        }
-    
-        .tip-calculator {
-            @extend .center-flex;
-            padding: rem-calc(32px) rem-calc(24px) rem-calc(32px) rem-calc(24px);
-            background-color: $white;
-            border-radius: 25px;
-            max-width: rem-calc(375px);
-            max-height: rem-calc(789px);
-            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-
-            .white-label-text {
-                color: $grayish-cyan;
-                display: inline-block;
-                margin-bottom: rem-calc(6px);
-            }
-
-            .input-section{
-                max-width: rem-calc(311px);
-            }
-
-            .tip-input,
-            .number-of-people,
-            .total-container {
-                margin-top: rem-calc(32px);
-            }
-
-            .tip-buttons {
-                margin-top: rem-calc(10px);
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                gap: rem-calc(16px) rem-calc(16.56px);
-                position: relative;
-
-                .tip-button {
-                    width: rem-calc(146.63px);
-                    height: rem-calc(48px);
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: $very-dark-cyan;
-                    border-radius: rem-calc(5px);
-                    color: $white;
-                    font-size: $form-input;
-                    font-weight: 700;
-                    font-family: $font-family;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease, color 0.3s ease;
-                }
-
-                .tip-button-custom {
-                    background-color: $very-light-grayish-cyan;
-                    color: $very-dark-cyan;
-                    border: none;
-                    outline: none;
-                    text-align: end;
-                    padding-left: rem-calc(17.33px);
-                    padding-right: rem-calc(19px);
-                    max-width: rem-calc(146.63px) - rem-calc(17.33px) - rem-calc(19px);
-                    max-height: rem-calc(48px);
-                }
-
-                .tip-button-custom::placeholder {
-                    color: $dark-grayish-cyan;
-                    opacity: 1;
-                }
-
-                .tip-button-custom:hover,
-                .tip-button-custom:focus,
-                .tip-button-custom:active {
-                    color: $dark-grayish-cyan;
-                }
-
-                .checked {
-                    background-color: $strong-cyan;
-                    color: $white;
-                }
-            }
-
-            .number-of-people-input,
-            .bill-input-field {
-                border: none;
-                outline: none;
-                border-radius: 5px;
-                text-align: end;
-                max-width: rem-calc(311px);
-                max-height: rem-calc(48px);
-                color: $very-dark-cyan;
-                font-family: $font-family;
-                font-size: $form-input;
-                font-weight: 700;
-                padding: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(19.26px);
-            }
-
-            .bill-input-field {
-                background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
-            }
-
-            .number-of-people-input {
-                background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
-            }
-
-            .bill-input-field::placeholder,
-            .number-of-people-input::placeholder {
-                color: $dark-grayish-cyan;
-                opacity: .35;
-            }
-
-            .active-state-label:hover,
-            .active-state-label:focus,
-            .active-state-label:active,            
-            .bill-input-field:hover,
-            .bill-input-field:focus,
-            .bill-input-field:active,
-            .number-of-people-input:hover,
-            .number-of-people-input:focus,
-            .number-of-people-input:active  {
-                outline: 2px solid $strong-cyan;
-                border-radius: 5px;
-            }
-
-            .total-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: rem-calc(37px) rem-calc(22px) rem-calc(24px) rem-calc(24px);
-                max-width: rem-calc(327px);
-                max-height: rem-calc(257px);
-                background-color: $very-dark-cyan;
-                border-radius: 15px;
-                color: $white;
-
-                .input-result {
-                    background-color: rgba(0, 0, 0, 0);
-                    border: none;
-                    outline: none;
-                    font-size: $total-mobile-font-size;
-                    color: $strong-cyan;
-                    font-weight: 700;
-                    font-family: $font-family;
-                    text-align: right;
-                    max-width: rem-calc(281px);
-                }
-
-                .tip-amount-per-person {
-                    margin-bottom: rem-calc(20px);
-                }
-
-                .total-per-person {
-                    margin-bottom: rem-calc(32px);
-                }
-
-                .per-span {
-                    font-size: rem-calc(13px);
-                    color: $grayish-cyan;
-                }
-
-                .reset-btn {
-                    @extend .center-flex;
-                    border: none;
-                    background-color: $strong-cyan;
-                    color: $very-dark-cyan;
-                    border-radius: 5px;
-                    width: rem-calc(281px);
-                    height: rem-calc(48px);
-                    font-size: rem-calc(20px);
-                    cursor: pointer;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    font-family: $font-family;
-                    transition: background-color 0.3s ease, color 0.3s ease;
-                }
-
-                .reset-btn:hover,
-                .reset-btn:focus,
-                .reset-btn:active {
-                    background-color: #0D686D;
-                    color: $very-dark-cyan;
-                }
-            }
-        }
-    }
-
-    .attribution { 
-        font-size: 11px;
-        text-align: center; 
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-
-    .attribution a { 
-        color: hsl(228, 45%, 44%); 
-    }
-
-    @media (min-width: 1000px) {
-
-        .center-flex {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .container {
-            flex-direction: column;
-
-            .tip-calculator {
-                min-width: rem-calc(920px);
-                min-height: rem-calc(481px);
-                padding: 0;
-    
-                .input-section {
-                    margin: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(48px);
-                    width: rem-calc(379px);
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-
-                .bill-input-field,
-                .number-of-people-input {
-                    min-width: rem-calc(379px);
-                    box-sizing: border-box;
-                    padding-right: rem-calc(17px);
-                    padding-left: rem-calc(36px);
-                }
-
-                .tip-buttons {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(2, 1fr);
-                    gap: rem-calc(16px) rem-calc(14px);
-
-                    .tip-button {
-                        width: rem-calc(117px);
-                    }
-
-                    .tip-button-custom{
-                        max-width: rem-calc(117px) - rem-calc(15px) - rem-calc(14px);
-                    }
-                }
-    
-                .total-container {
-                    align-items: center;
-                    max-height: rem-calc(417px);
-                    min-width: rem-calc(413px);
-                    margin: rem-calc(32px) rem-calc(32px) rem-calc(32px) rem-calc(48px);
-                    padding: rem-calc(40px) rem-calc(0px);
-
-                        .tip-amount-per-person,
-                        .total-per-person {
-                            min-width: rem-calc(333px);
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                        }
-
-                        .tip-amount-per-person {
-                            padding: rem-calc(16px) rem-calc(0) rem-calc(11px) rem-calc(0);
-                        }
-
-                        .total-per-person {
-                            margin-bottom: rem-calc(133px);
-                        }
-
-                        .reset-btn {
-                            min-width: rem-calc(333px);
-                            display: flex;
-                            justify-content: center;
-                        }
-                    }
-                }
-            }
-        }
-    }
+@import
+    'layout/forms',
+    'layout/footer',
+    'layout/header';

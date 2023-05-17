@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+.white-label-text {
+    color: $grayish-cyan;
+    display: inline-block;
+    margin-bottom: rem-calc(6px);
+}
+
+body {
+    background-color:  HSL(190, 49%, 84%);
+    font-size: rem-calc(16px);
+    font-weight: 700;
+    font-family: $font-family;
+}
+
+.tip-space,
+.total {
+    white-space: pre-line;
+}
+
+.per-span {
+    font-size: rem-calc(13px);
+    color: $grayish-cyan;
+}
+
+.tip-amount-per-person {
+    margin-bottom: rem-calc(20px);
+}
+
+.total-per-person {
+    margin-bottom: rem-calc(32px);
+}
+
+.input-result {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    font-size: $total-mobile-font-size;
+    color: $strong-cyan;
+    font-weight: 700;
+    font-family: $font-family;
+    text-align: right;
+    max-width: rem-calc(281px);
+}
