@@ -29,7 +29,14 @@ FONT
 
 $rem-base: 16px;
 $form-input: 24px;
+$total-mobile-font-size: 32px;
+$total-desktop-font-size: 48px;
+
 $font-family: 'Space Mono', monospace;
+
+* {
+    box-sizing: border-box;
+}
 
 //Function to convert values to rem.
 @function strip-unit($num) {
@@ -189,7 +196,9 @@ body {
                 border-radius: 5px;
                 text-align: end;
                 max-width: rem-calc(311px);
+                max-height: rem-calc(48px);
                 color: $very-dark-cyan;
+                font-family: $font-family;
                 font-size: $form-input;
                 font-weight: 700;
                 padding: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(19.26px);
@@ -201,6 +210,12 @@ body {
 
             .number-of-people-input {
                 background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+            }
+
+            .bill-input-field::placeholder,
+            .number-of-people-input::placeholder {
+                color: $dark-grayish-cyan;
+                opacity: .35;
             }
 
             .active-state-label:hover,
@@ -222,6 +237,7 @@ body {
                 justify-content: space-between;
                 padding: rem-calc(37px) rem-calc(22px) rem-calc(24px) rem-calc(24px);
                 max-width: rem-calc(327px);
+                max-height: rem-calc(257px);
                 background-color: $very-dark-cyan;
                 border-radius: 15px;
                 color: $white;
@@ -230,7 +246,12 @@ body {
                     background-color: rgba(0, 0, 0, 0);
                     border: none;
                     outline: none;
+                    font-size: $total-mobile-font-size;
                     color: $strong-cyan;
+                    font-weight: 700;
+                    font-family: $font-family;
+                    text-align: right;
+                    max-width: rem-calc(281px);
                 }
 
                 .tip-amount-per-person {
@@ -313,7 +334,10 @@ body {
 
                 .bill-input-field,
                 .number-of-people-input {
-                    width: rem-calc(379px);
+                    min-width: rem-calc(379px);
+                    box-sizing: border-box;
+                    padding-right: rem-calc(17px);
+                    padding-left: rem-calc(36px);
                 }
 
                 .tip-buttons {
@@ -333,7 +357,7 @@ body {
     
                 .total-container {
                     align-items: center;
-                    height: rem-calc(417px);
+                    max-height: rem-calc(417px);
                     min-width: rem-calc(413px);
                     margin: rem-calc(32px) rem-calc(32px) rem-calc(32px) rem-calc(48px);
                     padding: rem-calc(40px) rem-calc(0px);
