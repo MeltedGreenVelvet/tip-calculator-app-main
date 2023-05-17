@@ -76,7 +76,7 @@ input[type="number"]:active {
     -moz-appearance: textfield;
 }
 
-.mobile-center-flex {
+.center-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +90,7 @@ body {
     font-family: $font-family;
 
     .container {
-        @extend .mobile-center-flex;
+        @extend .center-flex;
     
         margin-bottom: 4.5rem; 
         .tip-space,
@@ -104,7 +104,7 @@ body {
         }
     
         .tip-calculator {
-            @extend .mobile-center-flex;
+            @extend .center-flex;
             padding: rem-calc(32px) rem-calc(24px) rem-calc(32px) rem-calc(24px);
             background-color: $white;
             border-radius: 25px;
@@ -116,6 +116,10 @@ body {
                 color: $grayish-cyan;
                 display: inline-block;
                 margin-bottom: rem-calc(6px);
+            }
+
+            .input-section{
+                max-width: rem-calc(311px);
             }
 
             .tip-input,
@@ -184,11 +188,11 @@ body {
                 outline: none;
                 border-radius: 5px;
                 text-align: end;
-                max-width: rem-calc(327px);
+                max-width: rem-calc(311px);
                 color: $very-dark-cyan;
                 font-size: $form-input;
                 font-weight: 700;
-                padding: rem-calc(16px) rem-calc(17.48px) rem-calc(16px) rem-calc(19.26px);
+                padding: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(19.26px);
             }
 
             .bill-input-field {
@@ -243,7 +247,7 @@ body {
                 }
 
                 .reset-btn {
-                    @extend .mobile-center-flex;
+                    @extend .center-flex;
                     border: none;
                     background-color: $strong-cyan;
                     color: $very-dark-cyan;
@@ -281,4 +285,82 @@ body {
     .attribution a { 
         color: hsl(228, 45%, 44%); 
     }
-}
+
+    @media (min-width: 1000px) {
+
+        .center-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container {
+            flex-direction: column;
+
+            .tip-calculator {
+                min-width: rem-calc(920px);
+                min-height: rem-calc(481px);
+                padding: 0;
+    
+                .input-section {
+                    margin: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(48px);
+                    width: rem-calc(379px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .bill-input-field,
+                .number-of-people-input {
+                    width: rem-calc(379px);
+                }
+
+                .tip-buttons {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: rem-calc(16px) rem-calc(14px);
+
+                    .tip-button {
+                        width: rem-calc(117px);
+                    }
+
+                    .tip-button-custom{
+                        max-width: rem-calc(117px) - rem-calc(15px) - rem-calc(14px);
+                    }
+                }
+    
+                .total-container {
+                    align-items: center;
+                    height: rem-calc(417px);
+                    min-width: rem-calc(413px);
+                    margin: rem-calc(32px) rem-calc(32px) rem-calc(32px) rem-calc(48px);
+                    padding: rem-calc(40px) rem-calc(0px);
+
+                        .tip-amount-per-person,
+                        .total-per-person {
+                            min-width: rem-calc(333px);
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+
+                        .tip-amount-per-person {
+                            padding: rem-calc(16px) rem-calc(0) rem-calc(11px) rem-calc(0);
+                        }
+
+                        .total-per-person {
+                            margin-bottom: rem-calc(133px);
+                        }
+
+                        .reset-btn {
+                            min-width: rem-calc(333px);
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }

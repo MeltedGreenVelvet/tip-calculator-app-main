@@ -63,7 +63,6 @@ function calculateTip() {
   }
 }
 
-
 billInput.addEventListener('input', calculateTip);
 numberOfPeopleInput.addEventListener('input', calculateTip);
 customInput.addEventListener('input', () => {

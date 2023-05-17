@@ -33,7 +33,7 @@ input[type=number]:active {
   -moz-appearance: textfield;
 }
 
-.mobile-center-flex, body .container .tip-calculator .total-container .reset-btn, body .container .tip-calculator, body .container {
+.center-flex, body .container .tip-calculator .total-container .reset-btn, body .container .tip-calculator, body .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,6 +69,9 @@ body .container .tip-calculator .white-label-text {
   color: hsl(184, 14%, 56%);
   display: inline-block;
   margin-bottom: 0.375rem;
+}
+body .container .tip-calculator .input-section {
+  max-width: 19.4375rem;
 }
 body .container .tip-calculator .tip-input,
 body .container .tip-calculator .number-of-people,
@@ -133,11 +136,11 @@ body .container .tip-calculator .bill-input-field {
   outline: none;
   border-radius: 5px;
   text-align: end;
-  max-width: 20.4375rem;
+  max-width: 19.4375rem;
   color: hsl(183, 100%, 15%);
   font-size: 24px;
   font-weight: 700;
-  padding: 1rem 1.0925rem 1rem 1.20375rem;
+  padding: 1rem 0 1rem 1.20375rem;
 }
 body .container .tip-calculator .bill-input-field {
   background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
@@ -214,4 +217,68 @@ body .attribution {
 }
 body .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (min-width: 1000px) {
+  body .center-flex, body .container, body .container .tip-calculator, body .container .tip-calculator .total-container .reset-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body .container {
+    flex-direction: column;
+  }
+  body .container .tip-calculator {
+    min-width: 57.5rem;
+    min-height: 30.0625rem;
+    padding: 0;
+  }
+  body .container .tip-calculator .input-section {
+    margin: 1rem 0 1rem 3rem;
+    width: 23.6875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  body .container .tip-calculator .bill-input-field,
+  body .container .tip-calculator .number-of-people-input {
+    width: 23.6875rem;
+  }
+  body .container .tip-calculator .tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem 0.875rem;
+  }
+  body .container .tip-calculator .tip-buttons .tip-button {
+    width: 7.3125rem;
+  }
+  body .container .tip-calculator .tip-buttons .tip-button-custom {
+    max-width: 5.5rem;
+  }
+  body .container .tip-calculator .total-container {
+    align-items: center;
+    height: 26.0625rem;
+    min-width: 25.8125rem;
+    margin: 2rem 2rem 2rem 3rem;
+    padding: 2.5rem 0;
+  }
+  body .container .tip-calculator .total-container .tip-amount-per-person,
+  body .container .tip-calculator .total-container .total-per-person {
+    min-width: 20.8125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  body .container .tip-calculator .total-container .tip-amount-per-person {
+    padding: 1rem 0 0.6875rem 0;
+  }
+  body .container .tip-calculator .total-container .total-per-person {
+    margin-bottom: 8.3125rem;
+  }
+  body .container .tip-calculator .total-container .reset-btn {
+    min-width: 20.8125rem;
+    display: flex;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=styles.css.map */
