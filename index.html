@@ -11,11 +11,12 @@
 
 </head>
 <body>
-  <main class="container">
+  <div class="wrapper">
+  <header>
     <img class="splitter-img" src="../images/splitter.svg" alt="Splitter Tip Calculator Logo">
-
+  </header>
+  <main class="container">
       <form class="tip-calculator">
-        
         <section class="input-section">
           <div class="bill-input">
             <label for="bill" class="white-label-text">Bill:</label>
@@ -40,7 +41,7 @@
               <label for="fifty-percent-btn" class="tip-button active-state-label"> 50%
                 <input type="radio" name="fifty-percent-btn" id="fifty-percent-btn" value=".50">
               </label>
-              <label for="custom-input" class="tip-button active-state-label">
+              <label for="custom-input" class="tip-button active-state-label-custom">
                 <input type="number" name="custom-input" id="custom-input" class="tip-button tip-button-custom" placeholder="Custom">
               </label>
             </div>
@@ -55,13 +56,17 @@
           <div class="tip-amount-per-person">
             <label for="tip-amount" class="tip-space">Tip Amount 
               <span class="per-span">/ person</span></label>
-            <input type="text" id="tip-amount" name="tip-amount" class="tip-amount input-result" readonly>
+            <div class="align-result">
+              <input type="text" id="tip-amount" name="tip-amount" class="tip-amount input-result" readonly>
+            </div>
           </div>
       
           <div class="total-per-person">
             <label for="total" class="total">Total 
               <span class="per-span">/ person</span></label>
-            <input type="text" id="total" name="total" class="total-amount-per-person input-result" readonly>
+            <div class="align-result">
+              <input type="text" id="total" name="total" class="total-amount-per-person input-result" readonly>
+            </div>
           </div>
 
           <button type="reset" class="reset-btn">Reset</button>
@@ -70,9 +75,10 @@
       </form>
   </main>
   
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Morgan Trask</a>.
+  </footer>
   </div>
 </body>
 </html>

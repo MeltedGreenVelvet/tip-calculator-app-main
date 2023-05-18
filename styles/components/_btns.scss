@@ -34,6 +34,7 @@
         height: rem-calc(48px);
         padding-right: rem-calc(17.33px);
         padding-left: rem-calc(19px);
+        border-radius: rem-calc(3.5px);
     }
 
     .tip-button-custom::placeholder {
@@ -47,9 +48,24 @@
         color: $dark-grayish-cyan;
     }
 
+    .active-state-label-custom:hover,
+    .active-state-label-custom:focus,
+    .active-state-label-custom:active {
+        background-color: $very-light-grayish-cyan;
+        outline: 2px solid $strong-cyan;
+        border-radius: 5px;
+    }
+
+    .active-state-label:hover,
+    .active-state-label:focus,
+    .active-state-label:active {
+        background-color: #9FE8DF;
+        color: $very-dark-cyan;
+    }  
+
     .checked {
         background-color: $strong-cyan;
-        color: $white;
+        color: $very-dark-cyan;
     }
 }
 
@@ -69,7 +85,10 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.reset-btn:hover,
+.reset-btn:hover {
+    background-color: #9FE8DF;
+}
+
 .reset-btn:focus,
 .reset-btn:active {
     background-color: #0D686D;

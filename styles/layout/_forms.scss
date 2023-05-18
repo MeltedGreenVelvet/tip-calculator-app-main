@@ -5,6 +5,33 @@
     justify-content: center;
 }
 
+body {
+    background-color:  HSL(190, 49%, 84%);
+    font-size: rem-calc(16px);
+    font-weight: 700;
+    font-family: $font-family;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    .wrapper {
+        margin: auto;
+        min-width: 100%;
+        min-height: 100%;
+        
+        .attribution {
+            position: absolute;
+            top: 97%;
+        }
+    }
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
        -webkit-appearance: none;
@@ -28,6 +55,7 @@ input[type="radio"] {
 .container {
     @extend .center-flex;
     margin-bottom: 4.5rem;
+    position: relative;
 
     .tip-calculator {
         @extend .center-flex;
@@ -81,9 +109,6 @@ input[type="radio"] {
             opacity: .35;
         }
 
-        .active-state-label:hover,
-        .active-state-label:focus,
-        .active-state-label:active,            
         .bill-input-field:hover,
         .bill-input-field:focus,
         .bill-input-field:active,
@@ -104,6 +129,16 @@ input[type="radio"] {
             background-color: $very-dark-cyan;
             border-radius: 15px;
             color: $white;
+            position: relative;
+
+            .align-result {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                bottom: rem-calc(48px);
+            }
 
         }
     }
@@ -124,8 +159,15 @@ DESKTOP MEDIA QUERIES
         justify-content: space-between;
     }
 
+    .attribution {
+        position: relative;
+    }
+
     .container {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .tip-calculator {
             min-width: rem-calc(920px);
@@ -171,11 +213,11 @@ DESKTOP MEDIA QUERIES
                 width: rem-calc(413px);
                 margin: rem-calc(32px) rem-calc(32px) rem-calc(32px) rem-calc(48px);
                 padding: rem-calc(40px) rem-calc(0px);
+                position: relative;
 
                     .tip-amount-per-person,
                     .total-per-person {
                         width: rem-calc(333px);
-                        justify-content: space-between;
                     }
 
                     .tip-amount-per-person {
@@ -186,6 +228,15 @@ DESKTOP MEDIA QUERIES
                     .total-per-person {
                         margin-top: rem-calc(41px);
                         margin-bottom: rem-calc(133px);
+                    }
+
+                    .input-result {
+                        font-size: $total-desktop-font-size;
+                    }
+
+                    .align-result {
+                        bottom: rem-calc(62px);
+                        left: rem-calc(55px);
                     }
 
                     .reset-btn {
