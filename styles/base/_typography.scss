@@ -23,6 +23,12 @@ body {
     color: $grayish-cyan;
 }
 
+.tip-amount-per-person,
+.total-per-person {
+    width: rem-calc(281px);
+    height: rem-calc(48px);
+}
+
 .tip-amount-per-person {
     margin-bottom: rem-calc(20px);
 }
@@ -32,6 +38,7 @@ body {
 }
 
 .input-result {
+    
     background-color: rgba(0, 0, 0, 0);
     border: none;
     outline: none;

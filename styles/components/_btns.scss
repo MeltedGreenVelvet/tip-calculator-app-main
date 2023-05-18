@@ -25,14 +25,15 @@
 
     .tip-button-custom {
         background-color: $very-light-grayish-cyan;
+        width: rem-calc(147.81px);
         color: $very-dark-cyan;
         border: none;
         outline: none;
         text-align: end;
-        padding-left: rem-calc(17.33px);
-        padding-right: rem-calc(19px);
-        max-width: rem-calc(146.63px) - rem-calc(17.33px) - rem-calc(19px);
-        max-height: rem-calc(48px);
+        width: rem-calc(147.81.63px);
+        height: rem-calc(48px);
+        padding-right: rem-calc(17.33px);
+        padding-left: rem-calc(19px);
     }
 
     .tip-button-custom::placeholder {

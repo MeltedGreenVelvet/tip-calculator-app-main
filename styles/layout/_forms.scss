@@ -1,3 +1,10 @@
+.center-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
        -webkit-appearance: none;
@@ -53,7 +60,11 @@ input[type="radio"] {
             font-family: $font-family;
             font-size: $form-input;
             font-weight: 700;
-            padding: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(19.26px);
+            padding: rem-calc(16px) rem-calc(17px) rem-calc(16px) rem-calc(19.26px);
+        }
+
+        .bill-input {
+            padding-right: rem-calc(16.72px);
         }
 
         .bill-input-field {
@@ -88,8 +99,8 @@ input[type="radio"] {
             flex-direction: column;
             justify-content: space-between;
             padding: rem-calc(37px) rem-calc(22px) rem-calc(24px) rem-calc(24px);
-            max-width: rem-calc(327px);
-            max-height: rem-calc(257px);
+            width: rem-calc(327px);
+            height: rem-calc(257px);
             background-color: $very-dark-cyan;
             border-radius: 15px;
             color: $white;
@@ -98,3 +109,92 @@ input[type="radio"] {
     }
 }
 
+/*
+---------------------
+DESKTOP MEDIA QUERIES
+---------------------
+*/
+
+@media (min-width: 1000px) {
+
+    .center-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container {
+        flex-direction: column;
+
+        .tip-calculator {
+            min-width: rem-calc(920px);
+            min-height: rem-calc(481px);
+            padding: 0;
+
+            .input-section {
+                margin: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(48px);
+                width: rem-calc(379px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .bill-input-field,
+            .number-of-people-input {
+                min-width: rem-calc(379px);
+                box-sizing: border-box;
+                padding-right: rem-calc(17px);
+                padding-left: rem-calc(36px);
+            }
+
+            .tip-buttons {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: rem-calc(16px) rem-calc(14px);
+
+                .tip-button {
+                    width: rem-calc(117px);
+                }
+
+                .tip-button-custom{
+                    width: rem-calc(118px);
+                    padding-left: rem-calc(14px);
+                    padding-right: rem-calc(15px)
+                }
+            }
+
+            .total-container {
+                align-items: center;
+                height: rem-calc(417px);
+                width: rem-calc(413px);
+                margin: rem-calc(32px) rem-calc(32px) rem-calc(32px) rem-calc(48px);
+                padding: rem-calc(40px) rem-calc(0px);
+
+                    .tip-amount-per-person,
+                    .total-per-person {
+                        width: rem-calc(333px);
+                        justify-content: space-between;
+                    }
+
+                    .tip-amount-per-person {
+                        padding: rem-calc(16px) rem-calc(0) rem-calc(11px) rem-calc(0);
+                        margin-bottom: rem-calc(25px);
+                    }
+
+                    .total-per-person {
+                        margin-top: rem-calc(41px);
+                        margin-bottom: rem-calc(133px);
+                    }
+
+                    .reset-btn {
+                        min-width: rem-calc(333px);
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+    
