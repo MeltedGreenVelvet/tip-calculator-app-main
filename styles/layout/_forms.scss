@@ -92,6 +92,24 @@ input[type="radio"] {
             padding: rem-calc(16px) rem-calc(17px) rem-calc(16px) rem-calc(19.26px);
         }
 
+        .error-message {
+            position: relative;
+            color: $error-color;
+        }
+
+        .people-error,
+        .bill-error {
+            display: none;
+        }
+
+        .people-error {
+            left: rem-calc(28px);
+        }
+
+        .bill-error {
+            left: rem-calc(145px);
+        }
+
         .bill-input {
             padding-right: rem-calc(16.72px);
         }
@@ -190,11 +208,6 @@ DESKTOP MEDIA QUERIES
             .bill-input,
             .number-of-people{
                 margin-top: rem-calc(32px);
-            }
-
-            .error-message {
-                position: relative;
-                color: $error-color;
             }
 
             .people-error {

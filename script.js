@@ -6,15 +6,22 @@ const numberOfPeopleInput = document.getElementById('people');
 const tipAmountInput = document.getElementById('tip-amount');
 const totalAmountInput = document.getElementById('total');
 const customInput = document.getElementById('custom-input');
+const billError = document.querySelector('.bill-error');
+const peopleError = document.querySelector('.people-error');
+
 
 tipButtons.forEach(button => {
   button.addEventListener('click', () => {
     const radioBtn = button.querySelector('input[type="radio"]');
     if (radioBtn) {
       radioBtn.checked = true;
-      calculateTip();
+      if ((!billError.style.display || billError.style.display === 'none') && (!peopleError.style.display || peopleError.style.display === 'none')) {
+        calculateTip();
+      }
     } else if (button === customInput.parentElement) {
-      calculateTip();
+      if ((!billError.style.display || billError.style.display === 'none') && (!peopleError.style.display || peopleError.style.display === 'none')) {
+        calculateTip();
+      }
     }
   });
 });
@@ -32,9 +39,35 @@ radioButtons.forEach((radioButton, index) => {
   radioButton.addEventListener('click', () => {
     if (radioButton.checked) {
       handleRadioButtonClick(index);
-      calculateTip();
+      if ((!billError.style.display || billError.style.display === 'none') && (!peopleError.style.display || peopleError.style.display === 'none')) {
+        calculateTip();
+      }
     }
   });
+});
+
+billInput.addEventListener('input', function() {
+  if (billInput.value <= 0) {
+    billError.style.display = 'inline';
+  } else {
+    billError.style.display = 'none';
+  }
+  
+  if (billInput.value === '') {
+    billError.style.display = 'none';
+  }
+});
+
+numberOfPeopleInput.addEventListener('input', function() {
+  if (numberOfPeopleInput.value <= 0) {
+    peopleError.style.display = 'inline';
+  } else {
+    peopleError.style.display = 'none';
+  }
+
+  if (numberOfPeopleInput.value === '') {
+    peopleError.style.display = 'none';
+  }
 });
 
 function calculateTip() {
@@ -57,8 +90,17 @@ function calculateTip() {
       totalAmount = billValue * tipPercentage;
       totalPerPerson = (billValue + totalAmount) / numberOfPeopleValue;
 
-      tipAmountInput.value = tipAmount.toFixed(2);
-      totalAmountInput.value = totalPerPerson.toFixed(2);
+      if (isFinite(tipAmount)) {
+        tipAmountInput.value = tipAmount.toFixed(2);
+      } else {
+        tipAmountInput.value = '';
+      }
+
+      if (isFinite(totalPerPerson)) {
+        totalAmountInput.value = totalPerPerson.toFixed(2);
+      } else {
+        totalAmountInput.value = '';
+      }
     }
   }
 }
@@ -81,4 +123,5 @@ resetButton.addEventListener('click', () => {
   customInput.value = '';
   tipAmountInput.value = '';
   totalAmountInput.value = '';
+  billError.style.display = 'none';
 });

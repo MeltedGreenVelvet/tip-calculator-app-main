@@ -278,6 +278,20 @@ input[type=radio] {
   font-weight: 700;
   padding: 1rem 1.0625rem 1rem 1.20375rem;
 }
+.container .tip-calculator .error-message {
+  position: relative;
+  color: #E17457;
+}
+.container .tip-calculator .people-error,
+.container .tip-calculator .bill-error {
+  display: none;
+}
+.container .tip-calculator .people-error {
+  left: 1.75rem;
+}
+.container .tip-calculator .bill-error {
+  left: 9.0625rem;
+}
 .container .tip-calculator .bill-input {
   padding-right: 1.045rem;
 }
@@ -365,10 +379,6 @@ DESKTOP MEDIA QUERIES
   .container .tip-calculator .bill-input,
   .container .tip-calculator .number-of-people {
     margin-top: 2rem;
-  }
-  .container .tip-calculator .error-message {
-    position: relative;
-    color: #E17457;
   }
   .container .tip-calculator .people-error {
     left: 5.875rem;
