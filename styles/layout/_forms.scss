@@ -72,7 +72,8 @@ input[type="radio"] {
 
         .tip-input,
         .number-of-people,
-        .total-container {
+        .total-container,
+        .error-message {
             margin-top: rem-calc(32px);
         }
 
@@ -180,6 +181,28 @@ DESKTOP MEDIA QUERIES
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+            }
+
+            .labels-div {
+                position: relative;;
+            }
+
+            .bill-input,
+            .number-of-people{
+                margin-top: rem-calc(32px);
+            }
+
+            .error-message {
+                position: relative;
+                color: $error-color;
+            }
+
+            .people-error {
+                left: rem-calc(94px);
+            }
+
+            .bill-error {
+                left: rem-calc(212px);
             }
 
             .bill-input-field,

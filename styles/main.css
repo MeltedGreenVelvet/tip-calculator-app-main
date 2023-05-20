@@ -57,7 +57,7 @@ NEUTRALS
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 .white-label-text {
-  color: hsl(184deg, 14%, 56%);
+  color: hsl(184, 14%, 56%);
   display: inline-block;
   margin-bottom: 0.375rem;
 }
@@ -69,7 +69,7 @@ NEUTRALS
 
 .per-span {
   font-size: 0.8125rem;
-  color: hsl(184deg, 14%, 56%);
+  color: hsl(184, 14%, 56%);
 }
 
 .tip-amount-per-person,
@@ -90,7 +90,7 @@ NEUTRALS
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
-  color: hsl(172deg, 67%, 45%);
+  color: hsl(172, 67%, 45%);
   font-weight: 700;
   font-family: "Space Mono", monospace;
   text-align: right;
@@ -113,9 +113,9 @@ NEUTRALS
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(183deg, 100%, 15%);
+  background-color: hsl(183, 100%, 15%);
   border-radius: 0.3125rem;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   font-size: 24px;
   font-weight: 700;
   font-family: "Space Mono", monospace;
@@ -123,9 +123,9 @@ NEUTRALS
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .tip-buttons .tip-button-custom {
-  background-color: hsl(189deg, 41%, 97%);
+  background-color: hsl(189, 41%, 97%);
   width: 9.238125rem;
-  color: hsl(183deg, 100%, 15%);
+  color: hsl(183, 100%, 15%);
   border: none;
   outline: none;
   text-align: end;
@@ -136,44 +136,40 @@ NEUTRALS
   border-radius: 0.21875rem;
 }
 .tip-buttons .tip-button-custom::-moz-placeholder {
-  color: hsl(186deg, 14%, 43%);
-  opacity: 1;
-}
-.tip-buttons .tip-button-custom:-ms-input-placeholder {
-  color: hsl(186deg, 14%, 43%);
+  color: hsl(186, 14%, 43%);
   opacity: 1;
 }
 .tip-buttons .tip-button-custom::placeholder {
-  color: hsl(186deg, 14%, 43%);
+  color: hsl(186, 14%, 43%);
   opacity: 1;
 }
 .tip-buttons .tip-button-custom:hover,
 .tip-buttons .tip-button-custom:focus,
 .tip-buttons .tip-button-custom:active {
-  color: hsl(186deg, 14%, 43%);
+  color: hsl(186, 14%, 43%);
 }
 .tip-buttons .active-state-label-custom:hover,
 .tip-buttons .active-state-label-custom:focus,
 .tip-buttons .active-state-label-custom:active {
-  background-color: hsl(189deg, 41%, 97%);
-  outline: 2px solid hsl(172deg, 67%, 45%);
+  background-color: hsl(189, 41%, 97%);
+  outline: 2px solid hsl(172, 67%, 45%);
   border-radius: 5px;
 }
 .tip-buttons .active-state-label:hover,
 .tip-buttons .active-state-label:focus,
 .tip-buttons .active-state-label:active {
   background-color: #9FE8DF;
-  color: hsl(183deg, 100%, 15%);
+  color: hsl(183, 100%, 15%);
 }
 .tip-buttons .checked {
-  background-color: hsl(172deg, 67%, 45%);
-  color: hsl(183deg, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }
 
 .reset-btn {
   border: none;
-  background-color: hsl(172deg, 67%, 45%);
-  color: hsl(183deg, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
   border-radius: 5px;
   width: 17.5625rem;
   height: 3rem;
@@ -192,7 +188,7 @@ NEUTRALS
 .reset-btn:focus,
 .reset-btn:active {
   background-color: #0D686D;
-  color: hsl(183deg, 100%, 15%);
+  color: hsl(183, 100%, 15%);
 }
 
 .center-flex, .container .tip-calculator, .container, .reset-btn {
@@ -253,7 +249,7 @@ input[type=radio] {
 }
 .container .tip-calculator {
   padding: 2rem 1.5rem 2rem 1.5rem;
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 25px;
   max-width: 23.4375rem;
   max-height: 49.3125rem;
@@ -264,7 +260,8 @@ input[type=radio] {
 }
 .container .tip-calculator .tip-input,
 .container .tip-calculator .number-of-people,
-.container .tip-calculator .total-container {
+.container .tip-calculator .total-container,
+.container .tip-calculator .error-message {
   margin-top: 2rem;
 }
 .container .tip-calculator .number-of-people-input,
@@ -275,7 +272,7 @@ input[type=radio] {
   text-align: end;
   max-width: 19.4375rem;
   max-height: 3rem;
-  color: hsl(183deg, 100%, 15%);
+  color: hsl(183, 100%, 15%);
   font-family: "Space Mono", monospace;
   font-size: 24px;
   font-weight: 700;
@@ -285,22 +282,18 @@ input[type=radio] {
   padding-right: 1.045rem;
 }
 .container .tip-calculator .bill-input-field {
-  background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center hsl(189deg, 41%, 97%);
+  background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
 }
 .container .tip-calculator .number-of-people-input {
-  background: url(../images/icon-person.svg) no-repeat scroll left 16px center hsl(189deg, 41%, 97%);
+  background: url(../images/icon-person.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
 }
 .container .tip-calculator .bill-input-field::-moz-placeholder, .container .tip-calculator .number-of-people-input::-moz-placeholder {
-  color: hsl(186deg, 14%, 43%);
-  opacity: 0.35;
-}
-.container .tip-calculator .bill-input-field:-ms-input-placeholder, .container .tip-calculator .number-of-people-input:-ms-input-placeholder {
-  color: hsl(186deg, 14%, 43%);
+  color: hsl(186, 14%, 43%);
   opacity: 0.35;
 }
 .container .tip-calculator .bill-input-field::placeholder,
 .container .tip-calculator .number-of-people-input::placeholder {
-  color: hsl(186deg, 14%, 43%);
+  color: hsl(186, 14%, 43%);
   opacity: 0.35;
 }
 .container .tip-calculator .bill-input-field:hover,
@@ -309,7 +302,7 @@ input[type=radio] {
 .container .tip-calculator .number-of-people-input:hover,
 .container .tip-calculator .number-of-people-input:focus,
 .container .tip-calculator .number-of-people-input:active {
-  outline: 2px solid hsl(172deg, 67%, 45%);
+  outline: 2px solid hsl(172, 67%, 45%);
   border-radius: 5px;
 }
 .container .tip-calculator .total-container {
@@ -319,9 +312,9 @@ input[type=radio] {
   padding: 2.3125rem 1.375rem 1.5rem 1.5rem;
   width: 20.4375rem;
   height: 16.0625rem;
-  background-color: hsl(183deg, 100%, 15%);
+  background-color: hsl(183, 100%, 15%);
   border-radius: 15px;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   position: relative;
 }
 .container .tip-calculator .total-container .align-result {
@@ -366,8 +359,25 @@ DESKTOP MEDIA QUERIES
     flex-direction: column;
     justify-content: space-between;
   }
+  .container .tip-calculator .labels-div {
+    position: relative;
+  }
+  .container .tip-calculator .bill-input,
+  .container .tip-calculator .number-of-people {
+    margin-top: 2rem;
+  }
+  .container .tip-calculator .error-message {
+    position: relative;
+    color: #E17457;
+  }
+  .container .tip-calculator .people-error {
+    left: 5.875rem;
+  }
+  .container .tip-calculator .bill-error {
+    left: 13.25rem;
+  }
   .container .tip-calculator .bill-input-field,
-.container .tip-calculator .number-of-people-input {
+  .container .tip-calculator .number-of-people-input {
     min-width: 23.6875rem;
     box-sizing: border-box;
     padding-right: 1.0625rem;
@@ -396,7 +406,7 @@ DESKTOP MEDIA QUERIES
     position: relative;
   }
   .container .tip-calculator .total-container .tip-amount-per-person,
-.container .tip-calculator .total-container .total-per-person {
+  .container .tip-calculator .total-container .total-per-person {
     width: 20.8125rem;
   }
   .container .tip-calculator .total-container .tip-amount-per-person {
@@ -425,11 +435,11 @@ DESKTOP MEDIA QUERIES
   text-align: center;
   width: 100%;
   position: relative;
-  color: hsl(184deg, 14%, 56%);
+  color: hsl(184, 14%, 56%);
 }
 
 .attribution a {
-  color: hsl(183deg, 100%, 15%);
+  color: hsl(183, 100%, 15%);
 }
 
 * {

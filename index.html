@@ -19,7 +19,9 @@
       <form class="tip-calculator">
         <section class="input-section">
           <div class="bill-input">
-            <label for="bill" class="white-label-text">Bill:</label>
+            <div class="labels-div">
+              <label for="bill" class="white-label-text">Bill<span class="error-message bill-error">Can't be zero</span></label>
+            </div>
             <input type="number" id="bill" name="bill" class="bill-input-field" placeholder="0" required>
           </div>
       
@@ -47,7 +49,9 @@
             </div>
           </div>
           <div class="number-of-people">
-            <label for="people" class="white-label-text">Number of People:</label>
+            <div class="labels-div">
+              <label for="people" class="white-label-text">Number of People<span class="error-message people-error">Can't be zero</span></label>
+            </div>
             <input type="number" id="people" name="people" class="number-of-people-input" placeholder="0" required>
           </div>
         </section>
