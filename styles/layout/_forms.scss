@@ -177,9 +177,11 @@ DESKTOP MEDIA QUERIES
         align-items: center;
         justify-content: space-between;
     }
-
-    .attribution {
-        position: relative;
+    .wrapper{
+        padding-bottom: 90.86px;
+        .attribution {
+            position: relative;
+        }
     }
 
     .container {
@@ -194,7 +196,7 @@ DESKTOP MEDIA QUERIES
             padding: 0;
 
             .input-section {
-                margin: rem-calc(16px) rem-calc(0px) rem-calc(16px) rem-calc(48px);
+                margin: rem-calc(0px) rem-calc(0px) rem-calc(0px) rem-calc(48px);
                 width: rem-calc(379px);
                 display: flex;
                 flex-direction: column;
@@ -202,10 +204,9 @@ DESKTOP MEDIA QUERIES
             }
 
             .labels-div {
-                position: relative;;
+                position: relative;
             }
 
-            .bill-input,
             .number-of-people{
                 margin-top: rem-calc(32px);
             }

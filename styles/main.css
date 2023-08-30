@@ -355,7 +355,10 @@ DESKTOP MEDIA QUERIES
     align-items: center;
     justify-content: space-between;
   }
-  .attribution {
+  .wrapper {
+    padding-bottom: 90.86px;
+  }
+  .wrapper .attribution {
     position: relative;
   }
   .container {
@@ -370,7 +373,7 @@ DESKTOP MEDIA QUERIES
     padding: 0;
   }
   .container .tip-calculator .input-section {
-    margin: 1rem 0 1rem 3rem;
+    margin: 0 0 0 3rem;
     width: 23.6875rem;
     display: flex;
     flex-direction: column;
@@ -379,7 +382,6 @@ DESKTOP MEDIA QUERIES
   .container .tip-calculator .labels-div {
     position: relative;
   }
-  .container .tip-calculator .bill-input,
   .container .tip-calculator .number-of-people {
     margin-top: 2rem;
   }
