@@ -391,7 +391,7 @@ DESKTOP MEDIA QUERIES
     position: relative;
   }
   .container .tip-calculator .number-of-people {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
   .container .tip-calculator .people-error {
     left: 5.875rem;
