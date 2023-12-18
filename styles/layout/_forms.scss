@@ -237,6 +237,8 @@ DESKTOP MEDIA QUERIES
             }
 
             .tip-buttons {
+                margin-top: .63rem;
+                margin-bottom: .63rem;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(2, 1fr);
