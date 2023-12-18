@@ -186,7 +186,7 @@ DESKTOP MEDIA QUERIES
     .splitter-img {
         margin-bottom: 4rem;
         position: relative;
-        top: 1px;
+        top: 3px;
     }
 
     .container {
@@ -239,6 +239,7 @@ DESKTOP MEDIA QUERIES
 
                 .tip-button {
                     width: rem-calc(117px);
+                    font-size: 1.5rem;
                 }
 
                 .tip-button-custom{

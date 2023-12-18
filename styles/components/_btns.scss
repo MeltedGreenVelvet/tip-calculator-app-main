@@ -88,6 +88,11 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.reset-btn.initial {
+    background-color: #0D686D;
+    color: $very-dark-cyan;
+  }
+
 .reset-btn:hover {
     background-color: #9FE8DF;
 }

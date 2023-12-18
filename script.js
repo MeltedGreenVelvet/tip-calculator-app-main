@@ -9,6 +9,10 @@ const customInput = document.getElementById('custom-input');
 const billError = document.querySelector('.bill-error');
 const peopleError = document.querySelector('.people-error');
 
+document.addEventListener('DOMContentLoaded', function () {
+  const resetButton = document.querySelector('.reset-btn');
+  resetButton.classList.add('initial');
+  });
 
 tipButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -78,6 +82,7 @@ function calculateTip() {
 
   let tipPercentage, tipAmount, totalAmount, totalPerPerson;
 
+  resetButton.classList.remove('initial');
   if (!isNaN(billValue) && !isNaN(numberOfPeopleValue)) {
     if (selectedTipButton) {
       tipPercentage = parseFloat(selectedTipButton.value);
@@ -124,4 +129,5 @@ resetButton.addEventListener('click', () => {
   tipAmountInput.value = '';
   totalAmountInput.value = '';
   billError.style.display = 'none';
+  resetButton.classList.add('initial');
 });

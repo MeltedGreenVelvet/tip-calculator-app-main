@@ -203,6 +203,11 @@ NEUTRALS
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.reset-btn.initial {
+  background-color: #0D686D;
+  color: hsl(183, 100%, 15%);
+}
+
 .reset-btn:hover {
   background-color: #9FE8DF;
 }
@@ -383,7 +388,7 @@ DESKTOP MEDIA QUERIES
   .splitter-img {
     margin-bottom: 4rem;
     position: relative;
-    top: 1px;
+    top: 3px;
   }
   .container {
     display: flex;
@@ -430,6 +435,7 @@ DESKTOP MEDIA QUERIES
   }
   .container .tip-calculator .tip-buttons .tip-button {
     width: 7.3125rem;
+    font-size: 1.5rem;
   }
   .container .tip-calculator .tip-buttons .tip-button-custom {
     width: 7.375rem;
