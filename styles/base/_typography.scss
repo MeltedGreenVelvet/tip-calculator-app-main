@@ -18,6 +18,8 @@
 .per-span {
     font-size: rem-calc(13px);
     color: $grayish-cyan;
+    position: relative;
+    bottom: 2px;
 }
 
 .tip-amount-per-person,

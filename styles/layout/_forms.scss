@@ -259,11 +259,17 @@ DESKTOP MEDIA QUERIES
                     .tip-amount-per-person,
                     .total-per-person {
                         width: rem-calc(333px);
+                        height: 2.75rem;
                     }
 
                     .tip-amount-per-person {
                         padding: rem-calc(16px) rem-calc(0) rem-calc(11px) rem-calc(0);
                         margin-bottom: rem-calc(25px);
+                    }
+
+                    .input-result,
+                    .input-result::placeholder {
+                        font-size: $total-desktop-font-size;
                     }
 
                     .total-per-person {

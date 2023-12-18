@@ -74,6 +74,8 @@ NEUTRALS
 .per-span {
   font-size: 0.8125rem;
   color: hsl(184, 14%, 56%);
+  position: relative;
+  bottom: 2px;
 }
 
 .tip-amount-per-person,
@@ -445,10 +447,18 @@ DESKTOP MEDIA QUERIES
   .container .tip-calculator .total-container .tip-amount-per-person,
   .container .tip-calculator .total-container .total-per-person {
     width: 20.8125rem;
+    height: 2.75rem;
   }
   .container .tip-calculator .total-container .tip-amount-per-person {
     padding: 1rem 0 0.6875rem 0;
     margin-bottom: 1.5625rem;
+  }
+  .container .tip-calculator .total-container .input-result::-moz-placeholder {
+    font-size: 48px;
+  }
+  .container .tip-calculator .total-container .input-result,
+  .container .tip-calculator .total-container .input-result::placeholder {
+    font-size: 48px;
   }
   .container .tip-calculator .total-container .total-per-person {
     margin-top: 2.5625rem;

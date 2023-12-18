@@ -91,13 +91,13 @@ function calculateTip() {
       totalPerPerson = (billValue + totalAmount) / numberOfPeopleValue;
 
       if (isFinite(tipAmount)) {
-        tipAmountInput.value = tipAmount.toFixed(2);
+        tipAmountInput.value = '$' + tipAmount.toFixed(2); // Add "$" sign
       } else {
         tipAmountInput.value = '';
       }
 
       if (isFinite(totalPerPerson)) {
-        totalAmountInput.value = totalPerPerson.toFixed(2);
+        totalAmountInput.value = '$' + totalPerPerson.toFixed(2); // Add "$" sign
       } else {
         totalAmountInput.value = '';
       }
