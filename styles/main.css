@@ -260,7 +260,6 @@ input[type=radio] {
 }
 .container .tip-calculator .input-section {
   max-width: 19.4375rem;
-  display: flex;
 }
 .container .tip-calculator .tip-input,
 .container .tip-calculator .number-of-people,
@@ -363,7 +362,7 @@ DESKTOP MEDIA QUERIES
     position: relative;
   }
   .splitter-img {
-    margin-bottom: 5.49rem;
+    margin-bottom: 4.75rem;
   }
   .container {
     display: flex;
