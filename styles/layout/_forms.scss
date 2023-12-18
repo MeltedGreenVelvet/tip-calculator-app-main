@@ -67,6 +67,7 @@ input[type="radio"] {
 
         .input-section{
             max-width: rem-calc(311px);
+            display: flex;
         }
 
         .tip-input,
@@ -114,11 +115,11 @@ input[type="radio"] {
         }
 
         .bill-input-field {
-            background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+            background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center #F3F9FA;
         }
 
         .number-of-people-input {
-            background: url(../images/icon-person.svg) no-repeat scroll left 16px center $very-light-grayish-cyan;
+            background: url(../images/icon-person.svg) no-repeat scroll left 16px center #F3F9FA;
         }
 
         .bill-input-field::placeholder,

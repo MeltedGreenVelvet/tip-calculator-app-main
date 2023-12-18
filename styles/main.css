@@ -57,9 +57,9 @@ NEUTRALS
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 .white-label-text {
-  color: hsl(184, 14%, 56%);
+  color: #5E7A7D;
   display: inline-block;
-  margin-bottom: 0.375rem;
+  margin-bottom: 1rem;
 }
 
 .tip-space,
@@ -260,6 +260,7 @@ input[type=radio] {
 }
 .container .tip-calculator .input-section {
   max-width: 19.4375rem;
+  display: flex;
 }
 .container .tip-calculator .tip-input,
 .container .tip-calculator .number-of-people,
@@ -299,10 +300,10 @@ input[type=radio] {
   padding-right: 1.045rem;
 }
 .container .tip-calculator .bill-input-field {
-  background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
+  background: url(../images/icon-dollar.svg) no-repeat scroll left 16px center #F3F9FA;
 }
 .container .tip-calculator .number-of-people-input {
-  background: url(../images/icon-person.svg) no-repeat scroll left 16px center hsl(189, 41%, 97%);
+  background: url(../images/icon-person.svg) no-repeat scroll left 16px center #F3F9FA;
 }
 .container .tip-calculator .bill-input-field::-moz-placeholder, .container .tip-calculator .number-of-people-input::-moz-placeholder {
   color: hsl(186, 14%, 43%);
