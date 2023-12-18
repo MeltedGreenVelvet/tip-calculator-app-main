@@ -57,9 +57,12 @@ input[type="radio"] {
         @extend .center-flex;
         padding: rem-calc(32px) rem-calc(24px) rem-calc(32px) rem-calc(24px);
         background-color: $white;
-        border-radius: 25px;
-        max-width: rem-calc(375px);
+        border-radius: 25px 25px 0 0;
+        width: rem-calc(375px);
         max-height: rem-calc(789px);
+        min-width: 100vw;
+        position: relative;
+        bottom: -27px;
         box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.20);
 
         .input-section{
@@ -180,6 +183,10 @@ DESKTOP MEDIA QUERIES
         }
     }
 
+    .splitter-img {
+        margin-bottom: 5.49rem;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -189,7 +196,13 @@ DESKTOP MEDIA QUERIES
         .tip-calculator {
             min-width: rem-calc(920px);
             min-height: rem-calc(481px);
+            border-radius: 25px;
             padding: 0;
+
+            .tip-input,
+            .number-of-people{
+                margin-top: 2.5rem;
+            }
 
             .input-section {
                 margin: rem-calc(0px) rem-calc(0px) rem-calc(0px) rem-calc(48px);
@@ -279,6 +292,7 @@ DESKTOP MEDIA QUERIES
                     }
                 }
             }
+        
         }
     }
     

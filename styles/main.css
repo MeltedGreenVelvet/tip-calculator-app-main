@@ -250,9 +250,12 @@ input[type=radio] {
 .container .tip-calculator {
   padding: 2rem 1.5rem 2rem 1.5rem;
   background-color: hsl(0, 0%, 100%);
-  border-radius: 25px;
-  max-width: 23.4375rem;
+  border-radius: 25px 25px 0 0;
+  width: 23.4375rem;
   max-height: 49.3125rem;
+  min-width: 100vw;
+  position: relative;
+  bottom: -27px;
   box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
 }
 .container .tip-calculator .input-section {
@@ -358,6 +361,9 @@ DESKTOP MEDIA QUERIES
   .wrapper .attribution {
     position: relative;
   }
+  .splitter-img {
+    margin-bottom: 5.49rem;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -367,7 +373,12 @@ DESKTOP MEDIA QUERIES
   .container .tip-calculator {
     min-width: 57.5rem;
     min-height: 30.0625rem;
+    border-radius: 25px;
     padding: 0;
+  }
+  .container .tip-calculator .tip-input,
+  .container .tip-calculator .number-of-people {
+    margin-top: 2.5rem;
   }
   .container .tip-calculator .input-section {
     margin: 0 0 0 3rem;
@@ -447,8 +458,9 @@ DESKTOP MEDIA QUERIES
   text-align: center;
   width: 100%;
   color: hsl(184, 14%, 56%);
-  top: 97%;
+  top: 98%;
   position: absolute;
+  z-index: 5;
 }
 
 .attribution a {
@@ -468,5 +480,4 @@ header {
 }
 header .splitter-img {
   position: relative;
-  margin-bottom: 5.49rem;
 }/*# sourceMappingURL=main.css.map */
