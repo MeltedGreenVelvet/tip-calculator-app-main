@@ -364,7 +364,7 @@ DESKTOP MEDIA QUERIES
   .splitter-img {
     margin-bottom: 4rem;
     position: relative;
-    top: 12px;
+    top: 8px;
   }
   .container {
     display: flex;
