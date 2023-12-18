@@ -186,7 +186,7 @@ DESKTOP MEDIA QUERIES
     .splitter-img {
         margin-bottom: 4rem;
         position: relative;
-        top: 2px;
+        top: 1px;
     }
 
     .container {
@@ -269,10 +269,6 @@ DESKTOP MEDIA QUERIES
                     .total-per-person {
                         margin-top: rem-calc(41px);
                         margin-bottom: rem-calc(133px);
-                    }
-
-                    .input-result {
-                        font-size: $total-desktop-font-size;
                     }
 
                     .align-result {

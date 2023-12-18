@@ -11,6 +11,10 @@
     white-space: pre-line;
 }
 
+.input-result {
+    font-size: $total-desktop-font-size;
+}
+
 .per-span {
     font-size: rem-calc(13px);
     color: $grayish-cyan;
@@ -30,7 +34,8 @@
     margin-bottom: rem-calc(32px);
 }
 
-.input-result {
+.input-result,
+.input-result::placeholder {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     outline: none;

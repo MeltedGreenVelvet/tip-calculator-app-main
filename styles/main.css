@@ -67,6 +67,10 @@ NEUTRALS
   white-space: pre-line;
 }
 
+.input-result {
+  font-size: 48px;
+}
+
 .per-span {
   font-size: 0.8125rem;
   color: hsl(184, 14%, 56%);
@@ -86,7 +90,20 @@ NEUTRALS
   margin-bottom: 2rem;
 }
 
-.input-result {
+.input-result::-moz-placeholder {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  color: hsl(172, 67%, 45%);
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  text-align: right;
+  max-width: 17.5625rem;
+  font-size: 32px;
+}
+
+.input-result,
+.input-result::placeholder {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -364,7 +381,7 @@ DESKTOP MEDIA QUERIES
   .splitter-img {
     margin-bottom: 4rem;
     position: relative;
-    top: 2px;
+    top: 1px;
   }
   .container {
     display: flex;
@@ -436,9 +453,6 @@ DESKTOP MEDIA QUERIES
   .container .tip-calculator .total-container .total-per-person {
     margin-top: 2.5625rem;
     margin-bottom: 8.3125rem;
-  }
-  .container .tip-calculator .total-container .input-result {
-    font-size: 48px;
   }
   .container .tip-calculator .total-container .align-result {
     bottom: 3.875rem;
